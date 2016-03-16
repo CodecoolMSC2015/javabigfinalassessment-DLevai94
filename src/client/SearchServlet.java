@@ -1,7 +1,11 @@
 package client;
 
 import java.io.IOException;
+import java.io.OutputStream;
 import java.io.PrintWriter;
+import java.net.Socket;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,10 +15,6 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/SearchServlet")
 public class SearchServlet extends HttpServlet {
-
-	public SearchServlet() {
-		super();
-	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -30,7 +30,15 @@ public class SearchServlet extends HttpServlet {
 		response.setContentType("text/html");
 		request.getRequestDispatcher("index.jsp").include(request, response);
 		String skill = request.getParameter("skill");
-		out.println("Skill: " + skill);
+		String[] splittedSkills = skill.split(",");
+
+		SocketClient sc = new SocketClient(splittedSkills);
+
+		String searchType = request.getParameter("searchType");
+		out.println("Searchtype: " + searchType);
+
+		// TODO: searchtype jó lekérése, mert most csak "on"-t ad vissza ez a fos.
+
 		out.flush();
 		out.close();
 	}
