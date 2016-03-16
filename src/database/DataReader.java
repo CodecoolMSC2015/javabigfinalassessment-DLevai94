@@ -1,9 +1,10 @@
-package server;
+package database;
 
 import java.util.HashSet;
 import java.util.Set;
 
 import person.Person;
+import server.SearchType;
 
 public abstract class DataReader {
 	String searchCriteria;

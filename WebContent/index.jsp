@@ -8,8 +8,9 @@
 </head>
 <body>
 	<h1>Search</h1>
+	<p>Search for a skilled person.</p>
 	<form method="post" action="SearchServlet">
-		Skill: <input type="text" name="skill" placeholder="Skill"
+		Required skills: <input type="text" name="skill" placeholder="Java, JavaScript, C#, etc."
 			required /> <br /> Search: <br /> <input type="radio"
 			name="searchType" required />Mandatory <br /> <input type="radio"
 			name="searchType" required />Optional <br /> <input type="submit"
