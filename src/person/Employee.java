@@ -1,4 +1,4 @@
-package server;
+package person;
 
 public class Employee extends Person {
 	int salary;

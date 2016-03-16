@@ -1,4 +1,4 @@
-package server;
+package person;
 
 public class Skill {
 	String name;

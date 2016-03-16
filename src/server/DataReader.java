@@ -3,7 +3,9 @@ package server;
 import java.util.HashSet;
 import java.util.Set;
 
-public class DataReader {
+import person.Person;
+
+public abstract class DataReader {
 	String searchCriteria;
 	SearchType searchType;
 
@@ -15,7 +17,7 @@ public class DataReader {
 		this.searchType = searchType;
 	}
 
-	public Set<Person> getPersons(String searchCriteria, SearchType searchType){
+	public Set<Person> getPersons() {
 		Set<Person> persons = new HashSet<>();
 		return persons;
 	}
